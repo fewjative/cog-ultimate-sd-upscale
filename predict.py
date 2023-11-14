@@ -1,8 +1,8 @@
+import io
 import subprocess
 import threading
 import time
 from cog import BasePredictor, Input, Path
-# from typing import List
 import os
 import torch
 import uuid
@@ -11,7 +11,6 @@ import urllib
 import websocket
 from PIL import Image
 from urllib.error import URLError
-import random
 
 SAMPLER = [
     "euler",
@@ -214,7 +213,11 @@ class Predictor(BasePredictor):
         workflow["6"]["inputs"]["text"] = positive_prompt
         workflow["7"]["inputs"]["text"] = negative_prompt
 
-        workflow["10"]["inputs"]["image"] = "/src/toupscale.png" #image
+        # The image input field requires a string of the path to the file
+        img = Image.open(image)
+        img.save('/src/upscalethis.png')
+
+        workflow["10"]["inputs"]["image"] = "/src/upscalethis.png"
 
         workflow["11"]["inputs"]["model_name"] = upscaler + ".pth"
 
@@ -230,8 +233,6 @@ class Predictor(BasePredictor):
 
         for node_id in images:
             for image_data in images[node_id]:
-                from PIL import Image
-                import io
                 image = Image.open(io.BytesIO(image_data))
                 image.save("out-"+str(seed)+".png")
                 return Path("out-"+str(seed)+".png")
