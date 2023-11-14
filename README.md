@@ -1,4 +1,4 @@
-# ComfyUI Ultimate SD Upscale with ControlNet tile Cog model
+# Cog Model for Ultimate SD Upscale with ControlNet tile via ComfyUI
 
 This is an implementation of Ultimate-SD-Upscale via Comfy UI as a Cog model. [Cog packages machine learning models as standard containers.](https://github.com/replicate/cog)
 
