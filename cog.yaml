@@ -1,0 +1,29 @@
+build:
+  # set to true if your model requires a GPU
+  gpu: true
+
+  system_packages:
+    - ffmpeg
+
+  python_version: "3.10.6"
+
+  python_packages:
+    - torch
+    - torchvision
+    - torchaudio
+    - torchsde
+    - einops
+    - transformers>=4.25.1
+    - safetensors>=0.3.0
+    - aiohttp
+    - accelerate
+    - pyyaml
+    - Pillow
+    - scipy
+    - tqdm
+    - psutil
+    - websocket-client==1.6.3
+
+
+# predict.py defines how predictions are run on your model
+predict: "predict.py:Predictor"
