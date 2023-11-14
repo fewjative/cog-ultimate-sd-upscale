@@ -34,9 +34,10 @@ other_ui:
     upscale_models: upscaler-cache/
     controlnet: controlnet-cache/
 
-Then, you can run predictions:
+Then, you can run predictions like such:
 
     cog predict -i image=@toupscale.png
+    cog predict -i image=@jesko.png -i positive_prompt="A car from need for speed, in a garage, cinematic"
 
 The workflow for ControlNet Tile and non Controlnet Tile Ultimate SD Upscale used for this repo is found under:
 
