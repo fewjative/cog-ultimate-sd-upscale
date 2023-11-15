@@ -2,6 +2,9 @@
 
 This is an implementation of Ultimate-SD-Upscale via Comfy UI as a Cog model. [Cog packages machine learning models as standard containers.](https://github.com/replicate/cog)
 
+Model can be run here:
+https://replicate.com/fewjative/ultimate-sd-upscale
+
 Initial logic to use ComfyUI is thanks to @Lucataco
 https://github.com/lucataco/cog-comfyui-sdxl-txt2img
 
